@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>EasyTravel</title>
+    <link rel="stylesheet" href="../public/index.css" />
+    <script src="../public/app.js" async defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>EasyPlan</h1>
+      <nav>
+        <ul>
+          <li>Home</li>
+          <li>About</li>
+          <li>Contact Us</li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div id="slide-wrapper">
+        <!--Source:https://www.google.com/search?q=cn+tower+toronto+rectangular+phot&tbm=isch&ved=2ahUKEwjXqZqmjPv7AhW7o3IEHVJnC-8Q2-cCegQIABAA&oq=cn+tower+toronto+rectangular+phot&gs_lcp=CgNpbWcQAzoECCMQJ1DYBlj6CWDVDWgAcAB4AIABTIgB5gKSAQE1mAEAoAEBqgELZ3dzLXdpei1pbWfAAQE&sclient=img&ei=GMyaY9e9NbvHytMP0s6t-A4&bih=984&biw=727#imgrc=ffHaIAJBsUoV2M&imgdii=ZQeiLMKBYXZl3M  -->
+        <div class="mySlides fade">
+          <img src="./Image/cntower.jpeg" alt="cntower" />
+        </div>
+        <!-- Source:https://www.google.com/search?q=nathan+phillips+square+ski+image&tbm=isch&ved=2ahUKEwip7KCvjfv7AhXkiXIEHZXsBM4Q2-cCegQIABAA&oq=nathan+phillips+square+ski+image&gs_lcp=CgNpbWcQAzoECCMQJ1CxCliJEGDEF2gAcAB4AIABV4gB8AKSAQE1mAEAoAEBqgELZ3dzLXdpei1pbWfAAQE&sclient=img&ei=OM2aY6nwEeSTytMPldmT8Aw&bih=984&biw=727#imgrc=VsvcHcfds7b_vM -->
+        <div class="mySlides fade">
+          <img src="./Image/nathan.webp" alt="nathan" />
+        </div>
+        <!-- Source: https://www.google.com/search?q=niagara+falls+image&tbm=isch&ved=2ahUKEwjX9r-k_vr7AhU4GFkFHfllBeQQ2-cCegQIABAA&oq=niagara+falls+image&gs_lcp=CgNpbWcQAzIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIGCAAQBRAeMgYIABAFEB4yBggAEAUQHjIGCAAQBRAeOgQIIxAnOgYIABAHEB46CAgAEIAEELEDOgsIABCABBCxAxCDAVC5J1jnRmD5TWgAcAB4AIABdYgBgAeSAQQxMS4xmAEAoAEBqgELZ3dzLXdpei1pbWfAAQE&sclient=img&ei=Z72aY5enDLiw5NoP-cuVoA4&bih=1041&biw=890#imgrc=P13RsV2gVCDmbM -->
+        <div class="mySlides fade">
+          <img src="./Image/niagara.avif" alt="niagara fall" />
+        </div>
+        <!-- Source:https://www.google.com/search?q=wonderland+toronto&sxsrf=ALiCzsbgUXnAns8ZuRCT4raDrl6OIPHl6g:1671089682171&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjD2ZKXjvv7AhVOFlkFHYxZCxsQ_AUoAnoECAEQBA&biw=727&bih=984&dpr=2#imgrc=rYVnhCjdqmhJtM -->
+        <div class="mySlides fade">
+          <img src="./Image/wonderland.png" alt="wonderland" />
+        </div>
+        <!-- Source: https://www.ripleyaquariums.com/canada/files/2013/03/RipleysAquarium-MoonJellies.jpeg -->
+        <div class="mySlides fade">
+          <img src="./Image/jellyfish.jpeg" alt="jelly fish" />
+        </div>
+        <div id="dots">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+      <div>
+        <div id="inroduction">
+          <p>NEW WAY TO PLAN YOUR TRIP</p>
+          Create customized itinerary, Select the province you want to visit and
+          you can filter with province and categories.
+        </div>
+        <form name="form" method="post">
+          <div id="selection-option">
+            <div>
+              <label for="province"> Province: </label>
+              <select id="province" name="province">
+                <option value="x" selected disabled>--Choose province--</option>
+                <option value="quebec" disabled>Quebec</option>
+                <option value="Ontario">Ontario</option>
+              </select>
+            </div>
+            <div>
+              <label for="city">City:</label>
+              <select id="city" name="city">
+                <option value="x" selected disabled>--choose city--</option>
+              </select>
+            </div>
+          </div>
+          <div id="categories">
+            <div>
+              <input
+                type="checkbox"
+                id="historic"
+                name="categories"
+                value="Historic"
+              />
+              <label for="historic">Historic</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                id="beaches"
+                name="categories"
+                value="Beaches"
+              />
+              <label for="beaches">Beaches</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                id="adventure"
+                name="categories"
+                value="Adventure"
+              />
+              <label for="adventure">Avdenture</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                id="restaurant"
+                name="categories"
+                value="Restaurant"
+              />
+              <label for="restaurant">Restaurant</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                id="wildlife"
+                name="categories"
+                value="Wildlife"
+              />
+              <label for="wildlife">Wildlife</label>
+            </div>
+          </div>
+          <div id="btn">
+            <button type="submit" value="submit" id="button">Submit</button>
+          </div>
+        </form>
+      </div>
+    </main>
+    <div id="hide"></div>
+    <footer>
+      <p>&copy; ManaliPatel, Dec 2022</p>
+    </footer>
+  </body>
+</html>
