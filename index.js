@@ -13,7 +13,12 @@ app.listen(port, () => {
   console.log(`Listening on http://localhost:${port}`);
 });
 // define public folder
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public'), {
+  mimeType: {
+    'css': 'text/css',
+    'js': 'text/javascript'
+  }
+}));
 
 // page route
 app.get('/', async (request, response) => {
