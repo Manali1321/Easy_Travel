@@ -55,11 +55,12 @@
         <form name="form" method="post">
           <div id="selection-option">
             <div>
-              <label for="province"> Province: </label>
-              <select id="province" name="province">
-                <option value="x" selected disabled>--Choose province--</option>
-                <option value="quebec" disabled>Quebec</option>
-                <option value="Ontario">Ontario</option>
+              <label for="country"> Country: </label>
+              <select id="country" name="country">
+                <option value="" selected disabled>--Choose Country--</option>
+                <!-- <% for (let c of country) { %>
+                <option value="<%= c.country %>"><%= c.country %></option>
+                <% } %> -->
               </select>
             </div>
             <div>

@@ -3,6 +3,7 @@ const { response } = require('express');
 const express = require('express');
 const app = express();
 const path = require('path');
+const country = require('./modules/countryapi');
 
 // define view folder
 app.set('views', path.join(__dirname, 'views'));
@@ -22,7 +23,8 @@ app.use(express.static(path.join(__dirname, 'public'), {
 
 // page route
 app.get('/', async (request, response) => {
-  response.render('index', {});
+
+  response.render('index', { title: "country", country: await country.getListOfCountries });
 })
 
 // API function
