@@ -58,15 +58,18 @@
               <label for="country"> Country: </label>
               <select id="country" name="country">
                 <option value="" selected disabled>--Choose Country--</option>
-                <!-- <% for (let c of country) { %>
-                <option value="<%= c.country %>"><%= c.country %></option>
-                <% } %> -->
+                <% for (let i=0; i<content.length; i++) { %>
+                <option value="<%= content[i].country %>"><%= content[i].country %></option>
+                <% } %>
               </select>
             </div>
             <div>
               <label for="city">City:</label>
               <select id="city" name="city">
                 <option value="x" selected disabled>--choose city--</option>
+                <% for (let i=0; i<content.length; i++) { %>
+                  <option value="<%= content[i].country %>"><%= content[i].country %></option>
+                  <% } %>
               </select>
             </div>
           </div>

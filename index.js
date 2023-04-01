@@ -1,9 +1,8 @@
 // import require modules and set express app
-const { response } = require('express');
 const express = require('express');
 const app = express();
 const path = require('path');
-const country = require('./modules/countryapi');
+const countryData = require('./modules/countryapi');
 
 // define view folder
 app.set('views', path.join(__dirname, 'views'));
@@ -23,9 +22,8 @@ app.use(express.static(path.join(__dirname, 'public'), {
 
 // page route
 app.get('/', async (request, response) => {
-
-  response.render('index', { title: "country", country: await country.getListOfCountries });
-})
-
+  let country = await countryData.getListOfCountries();
+  response.render('index', { content: country.data });
+});
 // API function
 // function to fetch data from api

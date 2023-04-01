@@ -8,16 +8,14 @@ async function getListOfCountries() {
   let response = await fetch(
     requrl,
     {
-      method: "GET"
-      , headers: {
+      method: "GET",
+      headers: {
         "Content-Type": "application/json"
-        //   ,"trakt-api-version": "2",
-        //   "trakt-api-key": process.env.TRAKT_CLIENT_ID
       }
     }
   );
-  console.log(await response.json());
-  // return await response.json();
+  // console.log(await response.json());
+  return await response.json();
 }
 
 module.exports = {
