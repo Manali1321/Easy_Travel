@@ -56,16 +56,17 @@
         <p>You choose to travel <%= city %>,<%= country %>. Here is list of <%= category %>. </p>
         <div>
           <% for (let i=0; i<result.length; i++) { %>
-            <h2>long: <%= result[i].geometry.location %></h2>
             <h2>Name of the Place: <%= result[i].name %></h2>
             <h3>Address: <%= result[i].formatted_address %></h3>
             <p>Rating: <%= result[i].rating %></p>
-            <br>
+            <h4>Latitude: <%= result[i].geometry.location.lat %></h4>
+            <h4>Latitude: <%= result[i].geometry.location.lng %></h4>
             <span>Type of place: </span>
             <% for (let j=0; j<result[i].types.length; j++){ %>
-            <%= result[i].types[j] %> ,
+              <%= result[i].types[j] %> ,
+              <% } %>
             <% } %>
-          <% } %>
+              <br>
           <img src="<%= map %>" alt="Map Image" />
         </div>
       </div>

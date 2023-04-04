@@ -45,8 +45,8 @@ async function getResult(selectedCity, selectedCategory) {
 /*
 ****** Function for google Map API *************
 */
-async function mapResult() {
-  let requrl = `${googlemap_URL}?center=40.714728,-73.998672&zoom=15&size=100x100&markers=color:red%7Clabel:A%7C40.714728,-73.998672&key=${key}`;
+async function mapResult(selectedCategory, selectedCity, selectedCountry) {
+  let requrl = `${googlemap_URL}?center=${selectedCategory}+in+${selectedCity},${selectedCountry}&zoom=15&size=200x200&markers=color:red%7Clabel:A%7Ccenter=${selectedCategory}+in+${selectedCity},${selectedCountry}&key=${key}`;
 
   let response = await fetch(
     requrl,

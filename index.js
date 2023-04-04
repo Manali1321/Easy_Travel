@@ -51,7 +51,7 @@ app.get('/result', async (request, response) => {
   selectedCategory = request.query.categories;
   let result = await countryData.getResult(selectedCity, selectedCategory);
   // console.log(result)
-  let mapResults = await countryData.mapResult();
+  let mapResults = await countryData.mapResult(selectedCategory, selectedCity, selectedCountry);
   response.render('result', { city: selectedCity, country: selectedCountry, category: selectedCategory, result: result, map: mapResults });
 });
 
