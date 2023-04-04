@@ -52,16 +52,27 @@
           Create customized itinerary, Select the province you want to visit and
           you can filter with province and categories.
         </div>
-        <h2>Choose of Country= <%= country %></h2>
-        <h3>Choose of City= <%= city %></h3>
-        <h3>Choose of Category= <%= category %></h3>
+        <div>
+        <p>You choose to travel <%= city %>,<%= country %>. Here is list of <%= category %>. </p>
+        <div>
+          <% for (let i=0; i<result.length; i++) { %>
+            <h2>long: <%= result[i].geometry.location %></h2>
+            <h2>Name of the Place: <%= result[i].name %></h2>
+            <h3>Address: <%= result[i].formatted_address %></h3>
+            <p>Rating: <%= result[i].rating %></p>
+            <br>
+            <span>Type of place: </span>
+            <% for (let j=0; j<result[i].types.length; j++){ %>
+            <%= result[i].types[j] %> ,
+            <% } %>
+          <% } %>
+          <img src="<%= map %>" alt="Map Image" />
+        </div>
       </div>
-      
       <a href="/" id="btn">
         <button type="submit" value="submit" id="button">
           Back to main page
         </button>
-        
       </a>
     </form>
     </main>

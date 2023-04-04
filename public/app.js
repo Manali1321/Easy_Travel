@@ -1,12 +1,4 @@
-var formHandle = document.forms.form;
-var province_selection = formHandle.province;
-formHandle.onsubmit = submitForm;
-var name_of_place = document.getElementById('name_of_place');
-var selectedCity = document.getElementById('city');
-var selectedProvince = document.getElementById('province');
-var result_filter = document.getElementById('hide');
-function submitForm() {
-}
+
 // onload slideshow
 // reference from https://www.w3schools.com/howto/howto_js_slideshow.asp
 

@@ -2,7 +2,13 @@
 const express = require('express');
 const path = require('path');
 const countryData = require('./modules/countryapi');
+
 const app = express();
+
+// Declared var
+var selectedCountry;
+var selectedCity;
+var selectedCategory;
 
 // define view folder
 app.set('views', path.join(__dirname, 'views'));
@@ -26,31 +32,29 @@ app.get('/', async (request, response) => {
   response.render('index', { country: country });
 });
 
-var selectedCountry;
+
 app.get('/city', async (request, response) => {
   let country = await countryData.getListOfCountries();
-  selectedCountry = request.query;
-  const listOfCities = country.filter((e) => e.country == selectedCountry.country)[0].cities;
+  selectedCountry = request.query.country;
+  const listOfCities = country.filter((e) => e.country == selectedCountry)[0].cities;
   response.render('city', { cities: listOfCities });
 });
 
-var selectedCity;
+
 app.get('/category', async (request, response) => {
-  selectedCity = request.query;
-  // console.log(selectedCountry);
-  // console.log(selectedCity);
+  selectedCity = request.query.city;
   response.render('category', { cities: selectedCity, country: selectedCountry });
 });
 
-var selectedCategory;
+
 app.get('/result', async (request, response) => {
-  selectedCategory = request.query;
-  // console.log(selectedCountry);
-  // console.log(selectedCity);
-  // console.log(selectedCategory);
-  let result = await countryData.getResult();
-  console.log(result);
-  response.render('result', { city: selectedCity.city, country: selectedCountry.country, category: selectedCategory.categories });
+  selectedCategory = request.query.categories;
+  let result = await countryData.getResult(selectedCity, selectedCategory);
+  // console.log(result)
+  let mapResults = await countryData.mapResult();
+  response.render('result', { city: selectedCity, country: selectedCountry, category: selectedCategory, result: result, map: mapResults });
 });
+
+
 // API function
 // function to fetch data from api

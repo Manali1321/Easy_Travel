@@ -1,12 +1,14 @@
-const country = "https://countriesnow.space/api/v0.1/countries/"; //base URL for any country API requests
-const url = "https://maps.googleapis.com/maps/api/place/textsearch/json";
+const countriesnow_URL = "https://countriesnow.space/api/v0.1/countries/"; //base URL for any countriesnow_URL API requests
+const googleplace_URL = "https://maps.googleapis.com/maps/api/place/textsearch/json";
+const googlemap_URL = "https://maps.googleapis.com/maps/api/staticmap";
+const key = "AIzaSyD89-PBPCZEiWIMpY_7wU78P2Z4MXn5FeQ";
 
 /*
- * Functions for country API requests.
+ ******** Functions for countriesnow_URL API requests.**********
  */
 
 async function getListOfCountries() {
-  let requrl = `${country}`;
+  let requrl = `${countriesnow_URL}`;
   let response = await fetch(
     requrl,
     {
@@ -16,16 +18,16 @@ async function getListOfCountries() {
       }
     }
   );
-  let countryData = await response.json();
-  // console.log(countryData.data)
-  return countryData.data;
+  let countriesnow_URLData = await response.json();
+  // console.log(countriesnow_URLData.data)
+  return countriesnow_URLData.data;
 }
 
-async function getResult() {
-  const country = "canada"
-  const key = "AIzaSyD89-PBPCZEiWIMpY_7wU78P2Z4MXn5FeQ";
-  // let requrl = `${url}?location=${country}&key=${key}`;
-  let requrl = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+in+Vancouver&key=AIzaSyD89-PBPCZEiWIMpY_7wU78P2Z4MXn5FeQ";
+/*
+****** Function for google place API *************
+*/
+async function getResult(selectedCity, selectedCategory) {
+  let requrl = `${googleplace_URL}?query=${selectedCategory}+in+${selectedCity}&key=${key}`;
 
   let response = await fetch(
     requrl,
@@ -37,13 +39,37 @@ async function getResult() {
     }
   );
   let getResult = await response.json();
-  console.log(getResult);
-  console.log(requrl);
-  return getResult;
+  return getResult.results;
 }
+
+/*
+****** Function for google Map API *************
+*/
+async function mapResult() {
+  let requrl = `${googlemap_URL}?center=40.714728,-73.998672&zoom=15&size=100x100&markers=color:red%7Clabel:A%7C40.714728,-73.998672&key=${key}`;
+
+  let response = await fetch(
+    requrl,
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "image/png",
+      }
+    }
+  );
+  let mapResults = await response.url;
+  // console.log(mapResults);
+  return mapResults;
+}
+
+/*
+****** Function for Weather API *************
+*/
+
 
 
 module.exports = {
   getListOfCountries,
   getResult,
+  mapResult,
 }
