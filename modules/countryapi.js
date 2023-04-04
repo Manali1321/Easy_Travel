@@ -4,7 +4,7 @@ const googlemap_URL = "https://maps.googleapis.com/maps/api/staticmap";
 const weather_URL = "https://api.openweathermap.org/data/2.5/weather?q=";
 
 const key = "AIzaSyD89-PBPCZEiWIMpY_7wU78P2Z4MXn5FeQ";
-const weather_key = "49eb8ec9aaf60fca34d049ba5fcc90cc";
+const weather_key = "527c5f79524854e05624c854c03f67b9";
 /*
  ******** Functions for countriesnow_URL API requests.**********
  */
