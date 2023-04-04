@@ -1,7 +1,7 @@
 // import require modules and set express app
 const express = require('express');
 const path = require('path');
-const countryData = require('./modules/countryapi');
+const data = require('./modules/countryapi');
 
 const app = express();
 
@@ -28,13 +28,13 @@ app.use(express.static(path.join(__dirname, 'public'), {
 
 // page route
 app.get('/', async (request, response) => {
-  let country = await countryData.getListOfCountries();
+  let country = await data.getListOfCountries();
   response.render('index', { country: country });
 });
 
 
 app.get('/city', async (request, response) => {
-  let country = await countryData.getListOfCountries();
+  let country = await data.getListOfCountries();
   selectedCountry = request.query.country;
   const listOfCities = country.filter((e) => e.country == selectedCountry)[0].cities;
   response.render('city', { cities: listOfCities });
@@ -49,10 +49,12 @@ app.get('/category', async (request, response) => {
 
 app.get('/result', async (request, response) => {
   selectedCategory = request.query.categories;
-  let result = await countryData.getResult(selectedCity, selectedCategory);
+  let result = await data.getResult(selectedCity, selectedCategory);
   // console.log(result)
-  let mapResults = await countryData.mapResult(selectedCategory, selectedCity, selectedCountry);
-  response.render('result', { city: selectedCity, country: selectedCountry, category: selectedCategory, result: result, map: mapResults });
+  let mapResults = await data.mapResult(selectedCity, selectedCountry);
+  let weatherData = await data.weatherData(selectedCity);
+
+  response.render('result', { city: selectedCity, country: selectedCountry, category: selectedCategory, result: result, map: mapResults, weather: weatherData });
 });
 
 

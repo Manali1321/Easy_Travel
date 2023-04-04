@@ -1,8 +1,10 @@
 const countriesnow_URL = "https://countriesnow.space/api/v0.1/countries/"; //base URL for any countriesnow_URL API requests
 const googleplace_URL = "https://maps.googleapis.com/maps/api/place/textsearch/json";
 const googlemap_URL = "https://maps.googleapis.com/maps/api/staticmap";
-const key = "AIzaSyD89-PBPCZEiWIMpY_7wU78P2Z4MXn5FeQ";
+const weather_URL = "https://api.openweathermap.org/data/2.5/weather?q=";
 
+const key = "AIzaSyD89-PBPCZEiWIMpY_7wU78P2Z4MXn5FeQ";
+const weather_key = "49eb8ec9aaf60fca34d049ba5fcc90cc";
 /*
  ******** Functions for countriesnow_URL API requests.**********
  */
@@ -45,8 +47,8 @@ async function getResult(selectedCity, selectedCategory) {
 /*
 ****** Function for google Map API *************
 */
-async function mapResult(selectedCategory, selectedCity, selectedCountry) {
-  let requrl = `${googlemap_URL}?center=${selectedCategory}+in+${selectedCity},${selectedCountry}&zoom=15&size=200x200&markers=color:red%7Clabel:A%7Ccenter=${selectedCategory}+in+${selectedCity},${selectedCountry}&key=${key}`;
+async function mapResult(selectedCity, selectedCountry) {
+  let requrl = `${googlemap_URL}?center=${selectedCity},${selectedCountry}&zoom=10&size=200x200&markers=color:red%7Clabel:A%7Ccenter=${selectedCity},${selectedCountry}&key=${key}`;
 
   let response = await fetch(
     requrl,
@@ -58,13 +60,31 @@ async function mapResult(selectedCategory, selectedCity, selectedCountry) {
     }
   );
   let mapResults = await response.url;
-  // console.log(mapResults);
+  //console.log(mapResults);
   return mapResults;
 }
 
 /*
 ****** Function for Weather API *************
 */
+async function weatherData(selectedCity) {
+  let requrl = `${weather_URL}${selectedCity}&appid=${weather_key}`;
+
+  let response = await fetch(
+    requrl,
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      }
+    }
+  );
+  let weatherData = await response.json();
+  console.log(weatherData)
+  return weatherData;
+}
+
+
 
 
 
@@ -72,4 +92,5 @@ module.exports = {
   getListOfCountries,
   getResult,
   mapResult,
+  weatherData,
 }

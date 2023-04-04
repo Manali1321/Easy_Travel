@@ -26,10 +26,6 @@
         <div class="mySlides fade">
           <img src="./Image/nathan.webp" alt="nathan" />
         </div>
-        <!-- Source: https://www.google.com/search?q=niagara+falls+image&tbm=isch&ved=2ahUKEwjX9r-k_vr7AhU4GFkFHfllBeQQ2-cCegQIABAA&oq=niagara+falls+image&gs_lcp=CgNpbWcQAzIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIGCAAQBRAeMgYIABAFEB4yBggAEAUQHjIGCAAQBRAeOgQIIxAnOgYIABAHEB46CAgAEIAEELEDOgsIABCABBCxAxCDAVC5J1jnRmD5TWgAcAB4AIABdYgBgAeSAQQxMS4xmAEAoAEBqgELZ3dzLXdpei1pbWfAAQE&sclient=img&ei=Z72aY5enDLiw5NoP-cuVoA4&bih=1041&biw=890#imgrc=P13RsV2gVCDmbM -->
-        <div class="mySlides fade">
-          <img src="./Image/niagara.avif" alt="niagara fall" />
-        </div>
         <!-- Source:https://www.google.com/search?q=wonderland+toronto&sxsrf=ALiCzsbgUXnAns8ZuRCT4raDrl6OIPHl6g:1671089682171&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjD2ZKXjvv7AhVOFlkFHYxZCxsQ_AUoAnoECAEQBA&biw=727&bih=984&dpr=2#imgrc=rYVnhCjdqmhJtM -->
         <div class="mySlides fade">
           <img src="./Image/wonderland.png" alt="wonderland" />
@@ -39,7 +35,6 @@
           <img src="./Image/jellyfish.jpeg" alt="jelly fish" />
         </div>
         <div id="dots">
-          <span class="dot"></span>
           <span class="dot"></span>
           <span class="dot"></span>
           <span class="dot"></span>
@@ -58,14 +53,17 @@
           <% for (let i=0; i<result.length; i++) { %>
             <h2>Name of the Place: <%= result[i].name %></h2>
             <h3>Address: <%= result[i].formatted_address %></h3>
-            <p>Rating: <%= result[i].rating %></p>
+            <p>Rating: <%= result[i].rating %>/5</p>
             <h4>Latitude: <%= result[i].geometry.location.lat %></h4>
             <h4>Latitude: <%= result[i].geometry.location.lng %></h4>
             <span>Type of place: </span>
             <% for (let j=0; j<result[i].types.length; j++){ %>
               <%= result[i].types[j] %> ,
               <% } %>
+              <br>
+              <br>
             <% } %>
+              <br>
               <br>
           <img src="<%= map %>" alt="Map Image" />
         </div>
