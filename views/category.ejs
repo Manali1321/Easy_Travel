@@ -52,20 +52,58 @@
           Create customized itinerary, Select the province you want to visit and
           you can filter with province and categories.
         </div>
-        <form name="form" method="get" action="./city">
+        <form name="form" method="get" action="./result">
           <div id="selection-option">
-            <div>
-              <label for="country"> Country: </label>
-              <select id="country" name="country">
-                <option value="" selected disabled>--Choose Country--</option>
-                <% for (let i=0; i<country.length; i++) { %>
-                <option value="<%= country[i].country %>"><%= country[i].country %></option>
-                <% } %>
-              </select>
+            <div id="categories">
+              <div>
+                <input
+                  type="checkbox"
+                  id="historic"
+                  name="categories"
+                  value="Historic"
+                />
+                <label for="historic">Historic</label>
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  id="beaches"
+                  name="categories"
+                  value="Beaches"
+                />
+                <label for="beaches">Beaches</label>
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  id="adventure"
+                  name="categories"
+                  value="Adventure"
+                />
+                <label for="adventure">Avdenture</label>
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  id="restaurant"
+                  name="categories"
+                  value="Restaurant"
+                />
+                <label for="restaurant">Restaurant</label>
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  id="wildlife"
+                  name="categories"
+                  value="Wildlife"
+                />
+                <label for="wildlife">Wildlife</label>
+              </div>
             </div>
           </div>
           <div id="btn">
-            <button type="submit" value="submit" id="button">Next</button>
+            <button type="submit" value="submit" id="button">Submit</button>
           </div>
         </form>
       </div>

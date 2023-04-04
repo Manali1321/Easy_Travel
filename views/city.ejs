@@ -52,14 +52,14 @@
           Create customized itinerary, Select the province you want to visit and
           you can filter with province and categories.
         </div>
-        <form name="form" method="get" action="./city">
+        <form name="form" method="get" action="./category">
           <div id="selection-option">
             <div>
-              <label for="country"> Country: </label>
-              <select id="country" name="country">
-                <option value="" selected disabled>--Choose Country--</option>
-                <% for (let i=0; i<country.length; i++) { %>
-                <option value="<%= country[i].country %>"><%= country[i].country %></option>
+              <label for="city">City:</label>
+              <select id="city" name="city">
+                <option value="" selected disabled>--choose city--</option>
+                <% for (let i=0; i<cities.length; i++) { %>
+                <option value="<%= cities[i] %>"><%= cities[i] %></option>
                 <% } %>
               </select>
             </div>
