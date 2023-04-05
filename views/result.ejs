@@ -48,7 +48,11 @@
           you can filter with province and categories.
         </div>
         <div>
-        <p>You choose to travel <%= city %>,<%= country %>. Here is list of <%= category %>. </p>
+        <div>
+          <p>You choose to travel <%= city %>,<%= country %>. Here is list of <%= category %>. </p>
+          <img src="<%= map %>" alt="Map Image" />
+          <img src="http://openweathermap.org/img/wn/<%= weather.weather[0].icon %>@2x.png" alt="image"/>
+        </div>
         <div>
           <% for (let i=0; i<result.length; i++) { %>
             <h2>Name of the Place: <%= result[i].name %></h2>
@@ -56,16 +60,11 @@
             <p>Rating: <%= result[i].rating %>/5</p>
             <h4>Latitude: <%= result[i].geometry.location.lat %></h4>
             <h4>Latitude: <%= result[i].geometry.location.lng %></h4>
-            <span>Type of place: </span>
+            <span>Type of place:</span>
             <% for (let j=0; j<result[i].types.length; j++){ %>
               <%= result[i].types[j] %> ,
-              <% } %>
-              <br>
-              <br>
             <% } %>
-              <br>
-              <br>
-          <img src="<%= map %>" alt="Map Image" />
+          <% } %>
         </div>
       </div>
       <a href="/" id="btn">
@@ -73,9 +72,8 @@
           Back to main page
         </button>
       </a>
-    </form>
+      </div>
     </main>
-    <div id="hide"></div>
     <footer>
       <p>&copy; ManaliPatel, Dec 2022</p>
     </footer>
