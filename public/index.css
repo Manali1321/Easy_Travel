@@ -8,40 +8,40 @@
 h1 {
   letter-spacing: 2px;
   font-weight: 800;
-  font-size: 40px;
+  font-size: 34px;
 }
 nav li {
   display: inline;
   padding: 0 20px;
-  font-weight: 700;
-  font-size: 24px;
+  font-weight: 800;
+  font-size: 20px;
 }
 li:hover {
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: rgb(188, 209, 240);
+  color: #080b34;
 }
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
+  background-color: #080b34;
+  color: rgb(188, 209, 240);
 }
 #selection-option {
   display: flex;
   justify-content: center;
-  gap: 140px;
   font-size: 24px;
-}
-.style-block {
-  display: grid;
 }
 #selection-option label {
   display: block;
   font-weight: 400;
 }
+
 #selection-option select {
   height: 30px;
   width: 200px;
-  margin: 15px 0;
+  margin: 25px 0 0;
   border: 2px solid black;
 }
 #categories {
@@ -50,40 +50,37 @@ header {
   gap: 35px;
   padding: 20px 0;
 }
+
+/* ********* buttons ********** */
+
 #btn {
   text-align: center;
-  margin-bottom: 100px;
+  margin: 50px 0;
 }
 #btn button {
   padding: 5px 35px;
-  background-color: #cdcdcd;
+  background-color: #080b34;
+  color: rgb(188, 209, 240);
 }
-.name {
-  font-size: 26px;
-  font-weight: 600;
+button a {
+  text-decoration: none;
+  color: rgb(188, 209, 240);
 }
+
+/* ************** Result page **************** */
+
 .place-detail {
-  font-size: 20px;
-  font-weight: 400;
-}
-.wrapper {
-  background-color: rgb(222, 229, 241);
+  font-size: 18px;
+  background-color: rgb(188, 209, 240);
   padding: 20px 25px;
   border-radius: 20px;
   margin: 15px 100px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  /* display: flex;
+  flex-wrap: wrap; */
 }
-.wrapper img {
-  width: 300px;
-  height: 250px;
-}
-.place-details {
-  padding: 10px 0;
-}
-/* slides */
+
+/******************** slides *******************/
 #slide-wrapper {
   position: relative;
 }
@@ -121,31 +118,53 @@ header {
   height: 60vh;
 }
 
-#inroduction {
-  color: black;
+/******************** introduction *******************/
+
+#introduction {
   font-weight: 800;
-  font-size: 24px;
-  padding: 5vw 10vw;
+  font-size: 18px;
+  padding: 3vw 12vw;
 }
-#inroduction p {
+#introduction h2 {
+  font-size: 28px;
   text-align: center;
-  font-size: 30px;
-  letter-spacing: 2px;
-  word-spacing: 5px;
-  padding-bottom: 5px;
+  color: #080b34;
+  padding-bottom: 10px;
 }
+#introduction p {
+  text-align: center;
+  font-size: 22px;
+  letter-spacing: 2px;
+  word-spacing: 3px;
+  padding-bottom: 15px;
+}
+/******************** footer *******************/
+
 footer p {
   text-align: center;
-  background-color: black;
-  color: white;
-  padding: 20px 0;
-  margin-top: 100px;
+  background-color: #080b34;
+  color: rgb(188, 209, 240);
+  padding: 12px 0;
 }
 #hide h2 {
   padding: 10px 25px;
 }
-.notfound {
-  color: rgba(255, 0, 0, 0.817);
-  text-align: center;
-  font-size: 26px;
+/**************** map-icon on category ****************/
+#map-icon {
+  display: flex;
+  justify-content: space-around;
+  height: 425px;
+  background-color: rgb(188, 209, 240);
 }
+#map {
+  width: 50%;
+}
+#icon {
+  width: 20%;
+}
+/* @media only screen and (max-width: 768px) {
+  .place-detail {
+    width: 100%;
+    margin-right: 0;
+  }
+} */

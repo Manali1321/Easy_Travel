@@ -21,7 +21,6 @@ async function getListOfCountries() {
     }
   );
   let countriesnow_URLData = await response.json();
-  // console.log(countriesnow_URLData.data)
   return countriesnow_URLData.data;
 }
 
@@ -43,12 +42,11 @@ async function getResult(selectedCity, selectedCategory) {
   let getResult = await response.json();
   return getResult.results;
 }
-
 /*
 ****** Function for google Map API *************
 */
 async function mapResult(selectedCity, selectedCountry) {
-  let requrl = `${googlemap_URL}?center=${selectedCity},${selectedCountry}&zoom=10&size=200x200&markers=color:red%7Clabel:A%7Ccenter=${selectedCity},${selectedCountry}&key=${key}`;
+  let requrl = `${googlemap_URL}?center=${selectedCity},${selectedCountry}&zoom=12&size=200x200&markers=color:red%7Clabel:A%7Ccenter=${selectedCity},${selectedCountry}&key=${key}`;
 
   let response = await fetch(
     requrl,
@@ -60,13 +58,32 @@ async function mapResult(selectedCity, selectedCountry) {
     }
   );
   let mapResults = await response.url;
-  //console.log(mapResults);
   return mapResults;
 }
 
 /*
 ****** Function for Weather API *************
 */
+async function weatherIcon(selectedCity) {
+  let requrl = `${weather_URL}${selectedCity}&appid=${weather_key}`;
+
+  let response = await fetch(
+    requrl,
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      }
+    }
+  );
+  let weatherData = await response.json();
+
+  if (weatherData.cod === 400 || weatherData.cod === 404) {
+    return "01d";
+  } else {
+    return weatherData.weather[0].icon;
+  }
+}
 async function weatherData(selectedCity) {
   let requrl = `${weather_URL}${selectedCity}&appid=${weather_key}`;
 
@@ -80,17 +97,15 @@ async function weatherData(selectedCity) {
     }
   );
   let weatherData = await response.json();
-  console.log(weatherData)
-  return weatherData;
+
+  return weatherData.weather[0].description;
+
 }
-
-
-
-
 
 module.exports = {
   getListOfCountries,
   getResult,
   mapResult,
+  weatherIcon,
   weatherData,
 }

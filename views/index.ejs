@@ -42,16 +42,18 @@
         </div>
       </div>
       <div>
-        <div id="inroduction">
+        <div id="introduction">
           <p>NEW WAY TO PLAN YOUR TRIP</p>
-          Create customized itinerary, Select the province you want to visit and
-          you can filter with province and categories.
+          <p>
+            Create customized itinerary, Select the province you want to visit and
+            you can filter with province and categories.
+          </p>
         </div>
         <form name="form" method="get" action="./city">
           <div id="selection-option">
             <div>
               <label for="country"> Country: </label>
-              <select id="country" name="country">
+              <select id="country" name="country" required>
                 <option value="" selected disabled>--Choose Country--</option>
                 <% for (let i=0; i<country.length; i++) { %>
                 <option value="<%= country[i].country %>"><%= country[i].country %></option>
@@ -63,6 +65,7 @@
             <button type="submit" value="submit" id="button">Next</button>
           </div>
         </form>
+        
       </div>
     </main>
     <footer>

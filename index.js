@@ -9,7 +9,7 @@ const app = express();
 var selectedCountry;
 var selectedCity;
 var selectedCategory;
-
+var coordi;
 // define view folder
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -25,36 +25,37 @@ app.use(express.static(path.join(__dirname, 'public'), {
     'js': 'text/javascript'
   }
 }));
-
+let country;
 // page route
 app.get('/', async (request, response) => {
-  let country = await data.getListOfCountries();
+  country = await data.getListOfCountries();
   response.render('index', { country: country });
 });
 
 
 app.get('/city', async (request, response) => {
-  let country = await data.getListOfCountries();
+  // console.log(country);
   selectedCountry = request.query.country;
   const listOfCities = country.filter((e) => e.country == selectedCountry)[0].cities;
-  response.render('city', { cities: listOfCities });
+  response.render('city', { cities: listOfCities, country: selectedCountry });
 });
 
 
 app.get('/category', async (request, response) => {
   selectedCity = request.query.city;
-  response.render('category', { cities: selectedCity, country: selectedCountry });
+  let weatherIcon = await data.weatherIcon(selectedCity);
+  let weatherData = await data.weatherData(selectedCity);
+  let mapResults = await data.mapResult(selectedCity, selectedCountry);
+
+  response.render('category', { cities: selectedCity, country: selectedCountry, weatherIcon: weatherIcon, weatherData, map: mapResults });
 });
 
 
 app.get('/result', async (request, response) => {
   selectedCategory = request.query.categories;
   let result = await data.getResult(selectedCity, selectedCategory);
-  // console.log(result)
-  let mapResults = await data.mapResult(selectedCity, selectedCountry);
-  let weatherData = await data.weatherData(selectedCity);
-
-  response.render('result', { city: selectedCity, country: selectedCountry, category: selectedCategory, result: result, map: mapResults, weather: weatherData });
+  console.log(result)
+  response.render('result', { cities: selectedCity, country: selectedCountry, category: selectedCategory, result: result });
 });
 
 

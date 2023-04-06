@@ -5,78 +5,78 @@
     <title>EasyTravel</title>
     <link rel="stylesheet" href="../index.css" />
   </head>
+  <header>
+    <h1>EasyPlan</h1>
+    <nav>
+      <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact Us</li>
+      </ul>
+    </nav>
+  </header>
   <body>
-    <header>
-      <h1>EasyPlan</h1>
-      <nav>
-        <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact Us</li>
-        </ul>
-      </nav>
-    </header>
     <main>
-      <div id="slide-wrapper">
-        <!--Source:https://www.google.com/search?q=cn+tower+toronto+rectangular+phot&tbm=isch&ved=2ahUKEwjXqZqmjPv7AhW7o3IEHVJnC-8Q2-cCegQIABAA&oq=cn+tower+toronto+rectangular+phot&gs_lcp=CgNpbWcQAzoECCMQJ1DYBlj6CWDVDWgAcAB4AIABTIgB5gKSAQE1mAEAoAEBqgELZ3dzLXdpei1pbWfAAQE&sclient=img&ei=GMyaY9e9NbvHytMP0s6t-A4&bih=984&biw=727#imgrc=ffHaIAJBsUoV2M&imgdii=ZQeiLMKBYXZl3M  -->
-        <div class="mySlides fade">
-          <img src="./Image/cntower.jpeg" alt="cntower" />
-        </div>
-        <!-- Source:https://www.google.com/search?q=nathan+phillips+square+ski+image&tbm=isch&ved=2ahUKEwip7KCvjfv7AhXkiXIEHZXsBM4Q2-cCegQIABAA&oq=nathan+phillips+square+ski+image&gs_lcp=CgNpbWcQAzoECCMQJ1CxCliJEGDEF2gAcAB4AIABV4gB8AKSAQE1mAEAoAEBqgELZ3dzLXdpei1pbWfAAQE&sclient=img&ei=OM2aY6nwEeSTytMPldmT8Aw&bih=984&biw=727#imgrc=VsvcHcfds7b_vM -->
-        <div class="mySlides fade">
-          <img src="./Image/nathan.webp" alt="nathan" />
-        </div>
-        <!-- Source:https://www.google.com/search?q=wonderland+toronto&sxsrf=ALiCzsbgUXnAns8ZuRCT4raDrl6OIPHl6g:1671089682171&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjD2ZKXjvv7AhVOFlkFHYxZCxsQ_AUoAnoECAEQBA&biw=727&bih=984&dpr=2#imgrc=rYVnhCjdqmhJtM -->
-        <div class="mySlides fade">
-          <img src="./Image/wonderland.png" alt="wonderland" />
-        </div>
-        <!-- Source: https://www.ripleyaquariums.com/canada/files/2013/03/RipleysAquarium-MoonJellies.jpeg -->
-        <div class="mySlides fade">
-          <img src="./Image/jellyfish.jpeg" alt="jelly fish" />
-        </div>
-        <div id="dots">
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-        </div>
+    <div id="slide-wrapper">
+      <!--Source:https://www.google.com/search?q=cn+tower+toronto+rectangular+phot&tbm=isch&ved=2ahUKEwjXqZqmjPv7AhW7o3IEHVJnC-8Q2-cCegQIABAA&oq=cn+tower+toronto+rectangular+phot&gs_lcp=CgNpbWcQAzoECCMQJ1DYBlj6CWDVDWgAcAB4AIABTIgB5gKSAQE1mAEAoAEBqgELZ3dzLXdpei1pbWfAAQE&sclient=img&ei=GMyaY9e9NbvHytMP0s6t-A4&bih=984&biw=727#imgrc=ffHaIAJBsUoV2M&imgdii=ZQeiLMKBYXZl3M  -->
+      <div class="mySlides fade">
+        <img src="./Image/cntower.jpeg" alt="cntower" />
       </div>
-      <div>
-        <div id="inroduction">
-          <p>NEW WAY TO PLAN YOUR TRIP</p>
-          Create customized itinerary, Select the province you want to visit and
-          you can filter with province and categories.
-        </div>
-        <div>
-        <div>
-          <p>You choose to travel <%= city %>,<%= country %>. Here is list of <%= category %>. </p>
-          <img src="<%= map %>" alt="Map Image" />
-          <img src="http://openweathermap.org/img/wn/<%= weather.weather[0].icon %>@2x.png" alt="image"/>
-        </div>
-        <div>
-          <% for (let i=0; i<result.length; i++) { %>
-            <h2>Name of the Place: <%= result[i].name %></h2>
-            <h3>Address: <%= result[i].formatted_address %></h3>
-            <p>Rating: <%= result[i].rating %>/5</p>
-            <h4>Latitude: <%= result[i].geometry.location.lat %></h4>
-            <h4>Latitude: <%= result[i].geometry.location.lng %></h4>
-            <span>Type of place:</span>
-            <% for (let j=0; j<result[i].types.length; j++){ %>
-              <%= result[i].types[j] %> ,
-            <% } %>
-          <% } %>
-        </div>
+      <!-- Source:https://www.google.com/search?q=nathan+phillips+square+ski+image&tbm=isch&ved=2ahUKEwip7KCvjfv7AhXkiXIEHZXsBM4Q2-cCegQIABAA&oq=nathan+phillips+square+ski+image&gs_lcp=CgNpbWcQAzoECCMQJ1CxCliJEGDEF2gAcAB4AIABV4gB8AKSAQE1mAEAoAEBqgELZ3dzLXdpei1pbWfAAQE&sclient=img&ei=OM2aY6nwEeSTytMPldmT8Aw&bih=984&biw=727#imgrc=VsvcHcfds7b_vM -->
+      <div class="mySlides fade">
+        <img src="./Image/nathan.webp" alt="nathan" />
       </div>
-      <a href="/" id="btn">
-        <button type="submit" value="submit" id="button">
-          Back to main page
-        </button>
-      </a>
+      <!-- Source:https://www.google.com/search?q=wonderland+toronto&sxsrf=ALiCzsbgUXnAns8ZuRCT4raDrl6OIPHl6g:1671089682171&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjD2ZKXjvv7AhVOFlkFHYxZCxsQ_AUoAnoECAEQBA&biw=727&bih=984&dpr=2#imgrc=rYVnhCjdqmhJtM -->
+      <div class="mySlides fade">
+        <img src="./Image/wonderland.png" alt="wonderland" />
       </div>
-    </main>
-    <footer>
-      <p>&copy; ManaliPatel, Dec 2022</p>
-    </footer>
-    <script src="../app.js" async defer></script>
+      <!-- Source: https://www.ripleyaquariums.com/canada/files/2013/03/RipleysAquarium-MoonJellies.jpeg -->
+      <div class="mySlides fade">
+        <img src="./Image/jellyfish.jpeg" alt="jelly fish" />
+      </div>
+      <div id="dots">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+    <div id="introduction">
+      <p>NEW WAY TO PLAN YOUR TRIP</p>
+      <p>
+        Create customized itinerary, Select the province you want to visit and
+        you can filter with province and categories.
+      </p>
+      <h2><%= category %> Life Of <%= cities %>, <%= country %></h2>
+    </div>
+    <div class="place-detail">
+    <% for (let i=0; i<result.length; i++) { %>
+      <h3>Name of the Place: <%= result[i].name %></h3>
+      <p>Address: <%= result[i].formatted_address %></p>
+      <p>
+        Rating: <%= result[i].rating %>/5 | Numbers of Review: <%=
+        result[i].user_ratings_total %>
+      </p>
+      <p>Type of place:</p>
+      <% for (let j=0; j<result[i].types.length; j++){ %>
+        <%= result[i].types[j] %> , <% } %>
+        <img
+          src="https://maps.googleapis.com/maps/api/staticmap?center=<%= result[i].geometry.location.lat %>,<%= result[i].geometry.location.lng %>&zoom=16&size=150x150&maptype=roadmap&key=AIzaSyD89-PBPCZEiWIMpY_7wU78P2Z4MXn5FeQ"
+          alt="placeMap"
+        >
+        <% } %>
+      </div>
+      <section>
+        <div id="btn">
+          <button type="submit" value="submit" id="button"><a href="/">Back to Main Page</a></button>
+        </div>
+      </section>
+        
+      </main>
+        <footer>
+          <p>&copy; ManaliPatel, Dec 2022</p>
+        </footer>
+        <script src="../app.js" async defer></script> </result[i].types.length;
+    ></result.length;>
   </body>
 </html>

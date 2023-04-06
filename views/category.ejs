@@ -42,17 +42,21 @@
         </div>
       </div>
       <div>
-        <div id="inroduction">
+        <div id="introduction">
           <p>NEW WAY TO PLAN YOUR TRIP</p>
-          Create customized itinerary, Select the province you want to visit and
-          you can filter with province and categories.
+          <p>
+            Create customized itinerary, Select the province you want to visit
+            and you can filter with province and categories.
+          </p>
+          <h2>Select One Category Of <%= cities %>, <%= country %></h2>
+          <p>Current weather Condition of <%=cities%> is <%= weatherData %>.</p>
         </div>
         <form name="form" method="get" action="./result">
           <div id="selection-option">
             <div id="categories">
               <div>
                 <input
-                  type="checkbox"
+                  type="radio"
                   id="historic"
                   name="categories"
                   value="Historic"
@@ -61,7 +65,7 @@
               </div>
               <div>
                 <input
-                  type="checkbox"
+                  type="radio"
                   id="beaches"
                   name="categories"
                   value="Beaches"
@@ -70,7 +74,7 @@
               </div>
               <div>
                 <input
-                  type="checkbox"
+                  type="radio"
                   id="adventure"
                   name="categories"
                   value="Adventure"
@@ -79,7 +83,7 @@
               </div>
               <div>
                 <input
-                  type="checkbox"
+                  type="radio"
                   id="restaurant"
                   name="categories"
                   value="Restaurant"
@@ -88,7 +92,7 @@
               </div>
               <div>
                 <input
-                  type="checkbox"
+                  type="radio"
                   id="wildlife"
                   name="categories"
                   value="Wildlife"
@@ -101,6 +105,14 @@
             <button type="submit" value="submit" id="button">Submit</button>
           </div>
         </form>
+      </div>
+      <div id="map-icon">
+        <img src="<%= map %>" alt="Map Image" id="map" />
+        <img
+          src="http://openweathermap.org/img/wn/<%= weatherIcon %>@2x.png"
+          alt="Weather Image"
+          id="icon"
+        />
       </div>
     </main>
     <div id="hide"></div>
