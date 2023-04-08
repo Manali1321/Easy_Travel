@@ -51,6 +51,8 @@
     </div>
     <div class="place-detail">
     <% for (let i=0; i<result.length; i++) { %>
+      <div class="place">
+      <div>
       <h3>Name of the Place: <%= result[i].name %></h3>
       <p>Address: <%= result[i].formatted_address %></p>
       <p>
@@ -60,10 +62,12 @@
       <p>Type of place:</p>
       <% for (let j=0; j<result[i].types.length; j++){ %>
         <%= result[i].types[j] %> , <% } %>
+        </div>
         <img
           src="https://maps.googleapis.com/maps/api/staticmap?center=<%= result[i].geometry.location.lat %>,<%= result[i].geometry.location.lng %>&zoom=16&size=150x150&maptype=roadmap&key=AIzaSyD89-PBPCZEiWIMpY_7wU78P2Z4MXn5FeQ"
           alt="placeMap"
         >
+        </div>
         <% } %>
       </div>
       <section>
