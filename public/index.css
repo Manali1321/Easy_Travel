@@ -5,6 +5,7 @@
   font-family: "Rubik", sans-serif;
 }
 
+/* ********** Header, Nav ************* */
 h1 {
   letter-spacing: 2px;
   font-weight: 800;
@@ -27,57 +28,6 @@ header {
   padding: 20px;
   background-color: #080b34;
   color: rgb(188, 209, 240);
-}
-#selection-option {
-  display: flex;
-  justify-content: center;
-  font-size: 24px;
-}
-#selection-option label {
-  display: block;
-  font-weight: 400;
-}
-
-#selection-option select {
-  height: 30px;
-  width: 200px;
-  margin: 25px 0 0;
-  border: 2px solid black;
-}
-#categories {
-  display: flex;
-  justify-content: center;
-  gap: 35px;
-  padding: 20px 0;
-}
-
-/* ********* buttons ********** */
-
-#btn {
-  text-align: center;
-  margin: 50px 0;
-}
-#btn button {
-  padding: 5px 35px;
-  background-color: #080b34;
-  color: rgb(188, 209, 240);
-}
-button a {
-  text-decoration: none;
-  color: rgb(188, 209, 240);
-}
-
-/* ************** Result page **************** */
-
-.place-detail {
-  font-size: 18px;
-  background-color: rgb(188, 209, 240);
-  padding: 20px 25px;
-  border-radius: 20px;
-  margin: 15px 100px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  /* display: flex;
-  flex-wrap: wrap; */
 }
 
 /******************** slides *******************/
@@ -118,8 +68,18 @@ button a {
   height: 60vh;
 }
 
-/******************** introduction *******************/
+/******************** footer *******************/
+footer p {
+  text-align: center;
+  background-color: #080b34;
+  color: rgb(188, 209, 240);
+  padding: 12px 0;
+}
+#hide h2 {
+  padding: 10px 25px;
+}
 
+/******************** introduction *******************/
 #introduction {
   font-weight: 800;
   font-size: 18px;
@@ -138,17 +98,57 @@ button a {
   word-spacing: 3px;
   padding-bottom: 15px;
 }
-/******************** footer *******************/
 
-footer p {
+/* ********** form ************* */
+#selection-option {
+  display: flex;
+  justify-content: center;
+  font-size: 24px;
+}
+#selection-option label {
+  display: block;
+  font-weight: 400;
+}
+#selection-option select {
+  height: 30px;
+  width: 200px;
+  margin: 25px 0 0;
+  border: 2px solid black;
+}
+#categories {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  padding: 20px 0;
+}
+
+/* ********* buttons ********** */
+#btn {
   text-align: center;
+  margin: 50px 0;
+}
+#btn button {
+  padding: 5px 35px;
   background-color: #080b34;
   color: rgb(188, 209, 240);
-  padding: 12px 0;
 }
-#hide h2 {
-  padding: 10px 25px;
+button a {
+  text-decoration: none;
+  color: rgb(188, 209, 240);
 }
+
+/* ************** Result Card **************** */
+.place-detail {
+  font-size: 18px;
+  background-color: rgb(188, 209, 240);
+  padding: 20px 25px;
+  border-radius: 20px;
+  margin: 15px 100px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  /* display: flex;
+  flex-wrap: wrap; */
+}
+
 /**************** map-icon on category ****************/
 #map-icon {
   display: flex;
