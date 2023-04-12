@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon ./index.js",
-    "build": "npm run dev",
+    "build": "npm run build-client && npm run build-server",
     "build-client": "webpack --mode=production --config webpack.client.config.js",
     "build-server": "webpack --mode=production --config webpack.server.config.js"
   },
