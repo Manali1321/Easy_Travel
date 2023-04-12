@@ -1,0 +1,6 @@
+This website is create with node.js, EJS with use of countriesnow, google place, google map and openweather API.
+Manipulating API data as per need and create as per user friendly.
+After clone this repo you have to run couple of code as below.
+
+Build code: npm install
+Run code: npm run dev
